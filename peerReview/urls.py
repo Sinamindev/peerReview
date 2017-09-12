@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+import peerReview.peerReview
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', peerReview.peerReview.index, name='index'),
+    url(r'^db', peerReview.peerReview.db, name='db'),
 ]
