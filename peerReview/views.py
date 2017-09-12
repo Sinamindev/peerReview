@@ -1,5 +1,5 @@
 import os
-import requests
+#import requests
 from django.shortcuts import render
 from django.http import HttpResponse
 
