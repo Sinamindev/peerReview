@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
-import peerReview.views
+from peerReview import views
+#import peerReview.views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
