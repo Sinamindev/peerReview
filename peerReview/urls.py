@@ -19,7 +19,7 @@ from django.contrib import admin
 import peerReview.views
 
 urlpatterns = [
-    url(r'^$', hello.views.index, name='index'),
+    url(r'^$', peerReview.views.index, name='index'),
     url(r'^admin/', admin.site.urls),
     #url(r'^$', 'peerReviews.views.home', name='home'),
 
