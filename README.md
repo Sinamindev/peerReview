@@ -1,53 +1,42 @@
-# Heroku Django Starter Template
+# Heroku Django App: Peer Review
 
-An utterly fantastic project starter template for Django 1.11.
 
-## Features
-
-- Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
-- Enhancements to Django's static file serving functionality via WhiteNoise.
-- Latest Python 3.6 runtime environment. 
 
 ## How to Use
 
-To use this project, follow these steps:
+ 1. Enter total number of peers
+ 2. Enter total number of reviewers
+ 3. Click Submit
 
-1. Create your working environment.
-2. Install Django (`$ pip install django`)
-3. Create a new project using this template
+## Running Locally
 
-## Creating Your Project
+Make sure you have Python [installed properly](http://install.python-guide.org).  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/) and [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
 
-Using this template to create a new Django app is easy::
+```sh
+$ git clone git@github.com:Sinamindev/peerReview.git
+$ cd peerReview
 
-    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
+$ pipenv install
 
-(If this doesn't work on windows, replace `django-admin.py` with `django-admin`)
+$ createdb peerReview
 
-You can replace ``helloworld`` with your desired project name.
+$ python manage.py migrate
+$ python manage.py collectstatic
 
-## Deployment to Heroku
+$ heroku local
+```
 
-    $ git init
-    $ git add -A
-    $ git commit -m "Initial commit"
+Your app should now be running on [localhost:5000](http://localhost:5000/).
 
-    $ heroku create
-    $ git push heroku master
+## Deploying to Heroku
 
-    $ heroku run python manage.py migrate
+```sh
+$ heroku create
+$ git push heroku master
 
-See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
+$ heroku run python manage.py migrate
+$ heroku open
+```
+## Documentation
 
-## Using Python 2.7?
-
-Just update `runtime.txt` to `python-2.7.13` (no trailing spaces or newlines!).
-
-
-## License: MIT
-
-## Further Reading
-
-- [Gunicorn](https://warehouse.python.org/project/gunicorn/)
-- [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
-- [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
+## Design Choices

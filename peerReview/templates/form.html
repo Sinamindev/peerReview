@@ -1,6 +1,33 @@
 <form method="POST" action="/search/" >
   {%csrf_token %}
-  <input type="test" name="peers" placeholder="Peers">
-  <input type="test" name="reviews" placeholder="Reviews">
-  <button type="submit">input</button>
+  <div>
+    <!-- take input from user for Peers and Reviewers -->
+    <!-- allows only integer inputs -->
+    <!-- peers must be greater or equal to 2 -->
+    <!-- reviews must be greater or equal to 1 -->
+    <input type="number" min="2" name="peers" placeholder="Peers">
+    <input type="number" min="1" name="reviews" placeholder="Reviewers">
+  </div>
+  <button type="submit">Submit</button>
 </form>
+
+<style>
+  input[type=number] {
+      width: 50%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+  }
+
+  button[type=submit] {
+      background-color: #008BBA; /* Blue */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      float: left;
+  }
+</style>

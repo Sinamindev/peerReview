@@ -1,5 +1,21 @@
-<ul style="list-style: none;">
+<ul>
+	<!-- loop through the assignments list and display each peers assigned reviews -->
 	{% for assignment in assignments %}
 		<li>Person{{forloop.counter}}: Should review persons {{ assignment }}</li>
 	{% endfor %}
 </ul>
+
+<style>
+	ul {
+	    background: #008BBA; /* Blue */
+	    padding: 20px;
+	    list-style: none;
+	}
+
+	ul li {
+	    background: #fefefe;
+	    padding: 5px;
+	    margin-left: 35px;
+	    margin: 5px;
+	}
+</style>
