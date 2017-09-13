@@ -1,5 +1,5 @@
-<ul>
+<ul style="list-style: none;">
 	{% for assignment in assignments %}
-		<li>{{ assignment }}</li>
+		<li>Person{{forloop.counter}}: Should review persons {{ assignment }}</li>
 	{% endfor %}
 </ul>
