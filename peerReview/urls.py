@@ -22,7 +22,8 @@ import peerReview.views
 
 urlpatterns = [
     url(r'^$', peerReview.views.index, name='index'),
-    url(r'^admin/', admin.site.urls),
+    #url(r'^admin/', admin.site.urls),
+    url(r'^admin/', include(admin.site.urls)),
     #url(r'^$', 'peerReviews.views.home', name='home'),
     url(r'^db', peerReview.views.db, name='db'),
 
