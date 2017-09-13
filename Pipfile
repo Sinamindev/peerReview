@@ -3,11 +3,11 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 
 [packages]
-dj-database-url = "*"
-django = "*"
-gunicorn = "*"
-psycopg2 = "*"
-whitenoise = "*"
+dj-database-url==0.4.1
+Django==1.11.1
+gunicorn==19.6.0
+psycopg2==2.6.2
+whitenoise==3.2
 requests = "*"
 
 [requires]
