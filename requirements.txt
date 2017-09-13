@@ -1,6 +1,5 @@
-dj-database-url = "*"
-django = "*"
-gunicorn = "*"
-psycopg2 = "*"
-whitenoise = "*"
-requests = "*"
+dj-database-url==0.4.1
+Django==1.11.1
+gunicorn==19.6.0
+psycopg2==2.6.2
+whitenoise==3.2
