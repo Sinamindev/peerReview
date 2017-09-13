@@ -2,18 +2,22 @@ from django.conf import settings
 from random import sample
 from collections import deque
 
+# Algorithm Design Choices and Logic
+# ---------------------------------------------------
+# - A list is used to store separate lists for each Peer(N) and their corresponding assigned Reviews(M)  
+# - A deque is created with values rangeing from 1 to N.
+# - A deque is used so we can pop out the value corresponding to the Peer currently being assigned Reviews
+#	 before randomly sampling M number of reviews from the remaining values in the deque to assign to each Peer, 
+#	 which prevents two things:
+#	  1. Prevents assigning a Peer to Review themselves
+#	  2. Prevents assigning duplicate Reviews to the same Peer
+# - At the end of every loop, the Peer value that was popped out of the deque is appended to the back.
+# - The list of assigned Reviews is returned after every Peer has been randomly assigned Reviews.
+
 # getPeerAssignments function
 # IN: N == number of peers
 # IN: M == number of reviews
 # OUT: assignments == list of assigned reviews for each peer
-# logic:	We use a list to store review assignments for each peer
-# 			We Use a deque to randomly sample M number of reviews to assign to each peer
-#			A deque is used so we can pop out the value corresponding to the peer being assigned,
-#	 		 before randomly choosing from the remaining values in the deque in order to prevent two things
-#			 1. Prevents assigning a peer to themselves
-#			 2. Prevents assigning duplicate reviews to the same peer
-#			At the end of every loop, the peer value that was popped out of the deque is appended to the back
-#			The list of assigned reviews is returned after every peer has been randomly assigned reviews
 def getPeerAssignments(N, M):
 	RANGE = deque(range(N+1)) # create deque of size N+1
 	RANGE.popleft() # pop the 0 value out of the deque
