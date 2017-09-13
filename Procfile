@@ -1,1 +1,2 @@
-web: gunicorn peerReview.wsgi
+web: gunicorn peerReview.wsgi --log-file -
+
